@@ -5,6 +5,8 @@ const app = express();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
+var port = process.env.port || 3000;
+
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -33,4 +35,4 @@ app.use('/homepage', homepageController);
 app.use('/employeepage', employeeController);
 
 
-var server = app.listen(3000, function() {});
+app.listen(3000, function() {});
