@@ -20,7 +20,7 @@ router.get('/', async(req,res)=>
       return res.status(401).send();
     }
 
-  let client= await MongoClient.connect(url);
+  let client= await MongoClient.connect(url,{ useUnifiedTopology: true });
   let dbo = client.db("ATNCompany");
   let results = await dbo.collection("Account").find({Username : usercookie}).toArray();
   res.render('homepage', {account : results});
