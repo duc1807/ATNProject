@@ -5,7 +5,7 @@ const app = express();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-app.listen(process.env.port || 3000);   
+app.listen(process.env.PORT || 3000);   
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
