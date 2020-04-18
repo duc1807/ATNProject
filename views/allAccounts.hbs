@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATN Company Management</title>
+    <link rel="stylesheet" href= "/style/allAccount.css">
+</head>
+<body>
+    <div id="nav-bar">  
+        <a href="/homepage"><img id ="home" src="/images/homepage2.png"></a>  
+        <ul>
+            <li id="trans" style="margin-left: 100px;"><a href="">Accounts Management</a></li>
+            <li><a href="/homepage/product">Products Management</a></li>
+            <li id="logout" style="background-color: rgb(105, 50, 50);" ><a href="/homepage/logout">Logout</a></li>
+        </ul>
+    </div>
+    
+<div class = "container">
+
+    <div id="info">
+        <h1 id="head">Accounts Management</h1>
+        <div id="info-line"></div>
+        <p style="font-size: 18px;color: white; text-align:center">Total accounts: {{count}} (include your account)</p>
+        
+        <form action="employee/search" method="POST">
+            <input required id="searchbar" type="text" name ="key" placeholder="Search something...">
+            <button id ="searchbutton">Search</button>
+        </form>
+           
+    </div>
+    <BR>
+
+{{# each accounts}}
+
+    <div id="content">
+
+        <div id="content-left">
+            <div id="role"><h1 id="role-info">{{Permission}}</h1></div>
+
+            <p class="label"><b>Name:</b> {{Name}}</p>
+            <p class="label"><b>Email:</b> {{Email}}</p>
+            <p class="label"><b>Phone number:</b> {{Phone}}</p>
+        </div>
+
+
+        <div id="content-right">
+            <p style="margin-left: 10px;" class="label"><b>Account username:</b> {{Username}}</p>
+            <p style="margin-left: 10px;" class="label"><b>Account password:</b> {{Password}}</p>
+        </div>
+
+        <div id="endline"></div>
+
+        <a href="/homepage/employee/edit?id={{_id}}"><img title="Edit" id="edit" src="/images/edit.png"></a>
+        <img title="Delete" onclick="confirmdel('{{_id}}')" id="delete" src="/images/delete.png">
+
+        <div class="pop-delete-background" id='{{_id}}'>
+            <div class="pop-delete" id='{{_id}}'>
+                <h1 style="font-size: 20px; margin-left:30px" class="forgot-form">Do you want to delete this account?</h1>
+                <p style="margin-left: 30px;">Account: {{Username}}</p>
+                <div style="margin-top: 10px; margin-left:50px" onclick="closedel('{{_id}}');" id="ignore"><img class="ignoreicon" src="/images/uncheck.png"></div>
+                <a href="/homepage/employee/delete?id={{_id}}"><button style="margin-top: 10px; margin-left:160px" id="check"><img class="checkicon" src="/images/check.png"></button></a>
+            </div>
+        </div>
+    </div>
+{{/each}}
+
+
+</div>
+
+<div id="option">
+    <div id="line"></div>
+    <img title="Add new account" id ="add" onclick="add()" src="/images/add.png">
+    <img title="Messages" onclick="openmess()" id="mess" src="/images/mess.png">
+</div>
+
+{{! Popup messages}}
+
+<div id="popup-mess-background">
+    <div id= "popup-mess-container">
+        <h1 id="Xmess" onclick="closemess()">X</h1>
+        <h1 id ="mess-form">Forgot accounts request</h1>
+        <div id="popup-mess-content">
+            {{# each messages}}
+            <div id="mess-info">
+                <p id="mess-dt" style="margin-top:10px;"><b>Account:</b> {{Username}}</p>
+                <p id="mess-dt"><b>Phone number:</b> {{Phone}}</p>
+                <p id="mess-dt"><b>Date requested:</b> {{Time}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="popup-background">
+    <div id= "popup-container">
+
+    <form id="form" action="employee" method="POST">
+        <h1 class="forgot-form" style="margin-top: 35px;">Add New Account</h1>
+
+        <div id="pop-left">
+            <label class="label"><b>Full Name </b></label><BR><BR>
+            <input style="margin-top: -8px;" class="forgot-input" type="text" placeholder="John i.e" name="name" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Email </b></label><BR><BR>
+            <input class="forgot-input" type="text" placeholder="example@gmail.com" name="email" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Phone number </b></label><BR><BR>
+            <input class="forgot-input" type="text" placeholder="0xx" name="phone" required><BR>
+        </div>
+
+        <div id="horizon-line"></div>
+
+        <div id="pop-right">
+            <label class="label"for="email"><b>Username </b></label><BR><BR>
+            <input style="margin-top: -8px;" class="forgot-input" type="text" placeholder="Username" name="username" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Password </b></label><BR><BR>
+            <input class="forgot-input" type="password" placeholder="••••••••" name="password" required><BR>
+
+            <label style="position: absolute; margin-top: -5px" class="label"><b>Permission </b></label><BR>
+            <input style="margin-left: 20px;" type="radio" name="permission" value="Administrator" required>Administrator
+            <input style="margin-left: 30px;" type="radio" name="permission" value="Staff">Staff<BR>
+            <div onclick="closeform(); reset()" id="ignore"><img class="ignoreicon" src="/images/uncheck.png"></div>
+            <button type="submit" id="check"><img class="checkicon" src="/images/check.png"></button>    
+        </div>
+    </form>
+    </div>
+</div>
+
+<script>
+
+// Popup messages
+function openmess() 
+{
+    document.getElementById('popup-mess-background').style.visibility = "visible";
+    document.getElementById('popup-mess-background').style.opacity = 1;
+};
+
+function closemess() 
+{
+    document.getElementById('popup-mess-background').style.visibility = "hidden";
+    document.getElementById('popup-mess-background').style.opacity = 0;
+};
+
+
+//popup add
+
+function add() 
+{
+    document.getElementById('popup-background').style.visibility = "visible";
+    document.getElementById('popup-background').style.opacity = 1;
+};
+
+function closeform() 
+{
+    document.getElementById('popup-background').style.visibility = "hidden";
+    document.getElementById('popup-background').style.opacity = 0;
+};
+
+function reset()
+{
+    document.getElementById("form").reset();
+}
+
+function confirmdel(id)
+{
+   document.getElementById(id).style.visibility= "visible";
+   document.getElementById(id).style.opacity= 1; 
+}
+
+function closedel(id)
+{
+    document.getElementById(id).style.visibility= "hidden";
+    document.getElementById(id).style.opacity= 0;
+}
+</script>
+
+
+
+
+
+</body>
+</html>

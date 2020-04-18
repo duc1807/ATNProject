@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATN Company Management</title>
+    <link rel="stylesheet" href= "/style/employeepage.css">
+</head>
+<body>
+<div id="nav-bar">
+    <a href="/employeepage"><img id ="home" src="/images/homepage2.png"></a>
+    <ul>
+        <li  id="trans" style="margin-left: 100px;"><a href="/employeepage/product">Products Management</a></li>
+        <li class="list" style="background-color: rgb(105, 50, 50); margin-left:900px" id="logout"><a href="/homepage/logout">Logout</a></li>
+        {{# each account}}
+        <h1 style="color: white; font-size:12.9px; margin-top:17px">Account: 
+        {{Username}} </h1>{{/each}}
+    </ul>
+</div>
+
+<div id="container">
+
+    <a href="employeepage/product">
+    <div id= "manage-product">
+        <img style="margin-top:12px;" id="productimg" src="/images/product.png">
+        <h1>Product management</h1>
+    </div>
+    </a>
+
+    {{# each account}}
+    <a href="/employeepage/info?id={{_id}}">
+    <div id="account">
+        <img id="accountimg" src="/images/account.png">
+        <h1>User account</h1>
+    </div>
+    </a>
+    {{/each}}
+
+</div>   
+
+</body>
+</html>

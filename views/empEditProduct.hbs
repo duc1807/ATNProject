@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATN Company Management</title>
+    <link rel="stylesheet" href= "/style/employeeProducts.css">
+    <link rel="stylesheet" href= "/style/editAccount.css">
+</head>
+<body>
+    <div id="nav-bar">  
+        <a href="/employeepage"><img id ="home" src="/images/homepage2.png"></a>  
+        <ul>
+            <li id="trans" ><a href="/employeepage/product">Products Management</a></li>
+            <li id="logout" style="background-color: rgb(105, 50, 50);" ><a href="/employeepage/logout">Logout</a></li>
+        </ul>
+    </div>
+    
+<div class = "container">
+    <div id="info">
+        <h1 id="head">Edit Product</h1>
+        <div id="info-line"></div>
+    </div>
+
+    <form action="edit" method="POST" enctype="multipart/form-data" id="edit-content">
+
+        <input type="hidden" name="id" value="{{products._id}}">
+
+        <div style="height: 200px;" id="content-left">
+            <label class="label"><b>Product Name </b></label><BR><BR>
+            <input value="{{products.Name}}" style="margin-top: -8px;" class="forgot-input" type="text" name="name" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Price </b></label><BR><BR>
+            <input value="{{products.Price}}" class="forgot-input" type="text" name="price" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Origin </b></label><BR><BR>
+            <input value="{{products.Origin}}" class="forgot-input" type="text" name="origin" required><BR>
+        </div>
+
+        <div id="content-right">
+            <label class="label"><b>Image </b></label><BR><BR>
+            <input style="margin-top: -8px;" type="file" name="picture" accept="image/*" required><BR><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Description </b></label><BR>
+            <textarea style="resize: none; width:220px; height:80px; margin-top:10px; margin-left:15px" name="description" required>{{products.Description}}</textarea><BR>
+
+            <a href="/employeepage/product"><div id="ignore"><img class="ignoreicon2" src="/images/uncheck.png"></div></a>
+            <button type="submit" id="check"><img class="checkicon2" src="/images/check.png"></button>     
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>

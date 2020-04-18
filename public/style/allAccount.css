@@ -1,0 +1,611 @@
+body
+{
+    background-image: url("backgroundsignin.jpg");
+    background-attachment: fixed;
+}
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  #trans
+  { 
+    transition: 0.4s;
+  }
+
+  #trans:hover
+  {
+    background-color: rgb(36, 64, 143);
+    transition: 0.4s;
+  }
+
+  #home
+  {
+    position: fixed;
+    margin-top: -11px;
+    margin-left: -10px;
+    width: 45px;
+    z-index: 8;
+    display: block;
+    padding: 1.5px 28px;
+    border: 1px solid rgb(85, 85, 85);
+  }
+
+  ul {
+    z-index: 7;
+    position: fixed;
+    list-style-type: none;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-top: -12.8px;
+    width: 1450px;
+    margin-left: -10px;
+    border: 2px solid rgb(153, 153, 153);
+  }
+
+  #logout
+  {
+      margin-left: 750px;
+  }
+  
+  li {
+    float: left;
+    border: 1px solid rgb(85, 85, 85);
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14.5px 25px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+li a:hover, #home:hover {
+    background-color: #111;
+    transition: 0.4s;
+  }
+
+  #trans
+  { 
+    background-color: rgb(48, 97, 202);
+    transition: 0.4s;
+  }
+
+  #trans:hover
+  {
+    background-color: rgb(36, 64, 143);
+    transition: 0.4s;
+  }
+
+  #head
+  {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  font-size: 45px;
+  letter-spacing: 7px;
+  line-height:50px;
+  text-align: center;
+  text-transform: uppercase;
+  }
+
+  
+
+  #info-line
+  {
+    margin-left: 182px;
+    height: 1px;
+    width: 60%;
+    background-color: rgb(109, 109, 109);
+  }
+
+  /* Container */
+.container{
+  position: absolute;
+  top: 140px;
+  left: 265px;
+  width: 65%;
+  z-index: -2;
+  height: fit-content;
+  background-color: rgb(0, 0, 0, 0.7);
+  transition: 0.4s;
+  border-radius: 20px;
+  transition: 0.4s;
+  }
+
+/* Search */
+
+#searchbar
+{
+  background-color: rgb(42, 42, 42);
+  color: white;
+  font-size: 15px;
+  height: 30px;
+  width: 300px;
+  margin-left: 280px;
+  border: none;
+  border-bottom: 2px solid grey;
+  padding: 4px;
+  padding-left: 10px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#searchbutton
+{
+  color: white;
+  background-color: rgb(68, 75, 68);
+  margin-left: -4px;
+  width: 70px;;
+  height: 40px;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+}
+
+#searchbutton:hover
+{
+  cursor: pointer;
+  background-color: rgb(95, 95, 95);
+}
+
+/*    */
+
+#role
+{
+  margin-top: -24px;
+  margin-left: -153px;
+  position: absolute;
+  width: 180px;
+  z-index: -1;
+  height:30px;
+  background-color: white;
+  border-radius: 10px;
+  border: 4px solid rgb(175, 175, 175);
+}
+
+#content-left
+{
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  float: left;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+#content-line
+{
+  margin-left: 344px;
+  position: absolute;
+  height: 180px;
+  width: 2px;
+  margin-top: 20px;
+  background-color: rgb(199, 198, 198);
+}
+
+#content-right
+{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 350px;
+  width: 320px;
+  height: 200px;
+}
+
+#endline
+{
+  border-radius: 10px;
+  margin-left: 42px;
+  margin-top: 180px;
+  width: 87%;
+  height: 1px;
+  background-color: rgb(212, 212, 212);
+}
+
+#edit
+{
+  position: absolute;
+  width: 20px;
+  transition: 0.2s;
+  margin-left: 550px;
+  margin-top: 10px;
+  float: left;
+}
+
+#delete
+{
+  margin-top: 5px;
+  margin-left: 600px;
+  position: absolute;
+  width: 27px;
+  transition: 0.2s;
+}
+
+#edit:hover, #delete:hover
+{
+  cursor: pointer;
+  transform: scale(1.15);
+  transition: 0.2s;
+}
+
+/*delete popup*/
+.pop-delete-background
+{
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height:100%;
+  margin-left: 0px;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);  
+  backdrop-filter: blur(3px);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+.pop-delete
+{
+  z-index: 20;
+  position: fixed;
+  width:300px;
+  height: 180px;
+  margin-top: 260px;
+  margin-left: 590px;
+  background-color: white;
+  border-radius: 4px;
+  border: 3px solid green;
+}
+
+.label
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+b{
+  font-size: 17px;
+}
+
+#role-info
+{
+  font-size: 15.5px;
+  margin-left: 3px;
+  margin-top: 6px;
+}
+
+#content
+{
+  z-index: 3;
+  margin-top: 30px;
+  width: 75%;
+  height: 220px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-left: 112px;
+  margin-bottom: 30px;
+  border: 4px solid rgb(175, 175, 175);
+}
+
+#info
+{
+  width: 100%;
+  height: 150px;
+}
+
+
+ #option
+  {
+    border-radius: 20px;
+    position: fixed;
+    background-color: white;
+    width: 110px;
+    height: 150px;
+    position: fixed;
+    right: 0px;
+    margin-right: -30px;
+    margin-top: 260px;
+    border: 5px solid brown;
+  }
+
+  #line
+  {
+    position: absolute;
+    right: 0;
+    margin-top: 73px;
+    height: 2px;
+    width: 109px;
+    background-color: rgb(189, 189, 189);
+  }
+
+  #add
+  {
+    width: 40px;
+    margin-top: 16px;
+    margin-left: 22px;
+    transition: 0.3s;
+  }
+
+  #add:hover, #mess:hover
+  {
+    transform: scale(1.15);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  #mess
+  {
+    width: 40px;
+    margin-top: 35px;
+    margin-left: 23px;
+    transition: 0.3s;
+  }
+
+  /* pop up mess */
+
+  #popup-mess-background
+  {
+
+    position: fixed;
+    margin-left: -8px;
+    width: 100%;
+    height:100%;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);  
+    backdrop-filter: blur(9px);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
+  }
+  
+  #popup-mess-container
+  {
+    margin-left: 420px;
+    margin-top: 190px;
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 6px;
+    
+  }
+
+  #popup-mess-content
+  {
+    border: 2px solid rgb(190, 190, 190);
+    margin-left: 75px;
+    background-color: rgb(233, 233, 233);
+    width: 450px;
+    height: 250px;
+    overflow: scroll;
+  }
+
+  #Xmess
+{
+  position: static;
+  font-size: 29px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 91%;
+  color: rgb(200, 200, 200);
+}
+#Xmess:hover
+{
+  color: rgb(126, 126, 126);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#mess-form
+{
+  color: rgb(54, 152, 233); 
+  font-size: 30px;
+  margin-top: -20px;
+  margin-left: 50px;
+  font-weight:bold; 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#mess-info
+{
+  background-color: rgb(255, 255, 255);
+  width: 433px;
+  height: 120px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border-top: 6px solid red;
+}
+
+#mess-dt
+{
+  margin-left: 30px; 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+  
+/* pop up */
+
+#popup-background
+{
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  margin-left: -8px;
+  width: 100%;
+  height:100%;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);  
+  backdrop-filter: blur(3px);
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
+}
+
+#popup-container
+{
+  margin-left: 420px;
+  margin-top: 190px;
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 6px;
+}
+
+#X
+{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#X:hover
+{
+  color: rgb(126, 126, 126);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.forgot-form
+{
+  color: rgb(54, 152, 233); 
+  font-size: 30px;
+  margin-left: 50px;
+  font-weight:bold; 
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#pop-left
+{
+  width: 40%;
+  height: 260px;
+  float: left;
+  margin-left: 50px;
+}
+
+#horizon-line
+{
+  margin-left: 299px;
+  position: absolute;
+  width: 2px;
+  height: 280px;
+  background-color: rgb(216, 214, 214);
+}
+
+#pop-right
+{
+  width: 40%;
+  height: 260px;
+  margin-left: 310px;
+
+}
+
+input[type="radio"]:hover
+{
+  cursor: pointer;
+}
+
+input[type="radio"]
+{
+  margin-top: 8px;
+}
+
+.forgot-input:focus
+{
+  border-bottom: 2px solid #8779ff;
+  transition: 0.2s ease;
+}
+
+.forgot-input
+{
+  margin-top: -20px;
+  margin-left: 10px;
+  display: block;
+  box-sizing: border-box;
+  padding: 4px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-bottom: 1px solid rgb(96, 189, 243);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.forgot-input:focus
+{
+  outline: none;
+}
+
+.label
+{
+  margin-top: 20;
+  color: black;
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#ignore
+{
+  position: absolute;
+  margin-top: 20px;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(223, 11, 11);
+  float: left;
+  margin-left: 30px;
+  opacity: 0.7;
+  transition: 0.4s;
+  border: none;
+}
+
+#check
+{
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 150px;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(30, 151, 30);
+  opacity: 0.7;
+  transition: 0.4s;
+  border: none;
+}
+
+.checkicon
+{
+  position: static;
+  margin-left: 6px;
+  margin-top: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+.ignoreicon
+{
+  position: absolute;
+  margin-left: 29px;
+  margin-top: 8px;
+  width: 25px;
+  height: 25px;
+}
+
+.ignoreicon:hover,.checkicon:hover, #ignore:hover, #check:hover
+{
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+
+
+

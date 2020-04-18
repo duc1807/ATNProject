@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATN Company Management</title>
+    <link rel="stylesheet" href= "/style/allAccount.css">
+    <link rel="stylesheet" href= "/style/editAccount.css">
+</head>
+<body>
+    <div id="nav-bar">  
+        <a href="/homepage"><img id ="home" src="/images/homepage2.png"></a>  
+        <ul>
+        <li id="trans" style="margin-left: 100px;"><a href="/homepage/employee">Accounts Management</a></li>
+        <li><a href="/homepage/product">Products Management</a></li>
+        <li id="logout" style="background-color: rgb(105, 50, 50);" ><a href="/homepage/logout">Logout</a></li>
+        </ul>
+    </div>
+
+
+<div class = "container">
+    <div id="info">
+        <h1 id="head">Edit account</h1>
+            <div id="info-line"></div>
+    </div>
+
+    <form action="info" method="POST" id="edit-content">
+
+        <input type="hidden" name="id" value="{{account._id}}">
+
+        <div style="height: 200px;" id="content-left">
+        <label class="label"><b>Full Name </b></label><BR><BR>
+        <input value="{{account.Name}}" style="margin-top: -8px;" class="forgot-input" type="text" name="name" required><BR><BR>
+
+        <label style="position: absolute; margin-top: -15px" class="label"><b>Email </b></label><BR><BR>
+        <input value="{{account.Email}}" class="forgot-input" type="text" name="email" required><BR><BR>
+
+        <label style="position: absolute; margin-top: -15px" class="label"><b>Phone number </b></label><BR><BR>
+        <input value="{{account.Phone}}" class="forgot-input" type="text" name="phone" required><BR>
+
+        </div>
+
+
+        <div id="content-right">
+            <label class="label"><b>Username </b></label><BR><BR>
+            <input value="{{account.Username}}" style="margin-top: -8px;" class="forgot-input" type="text" name="username" required><BR><BR>
+
+            <label style="position: absolute; margin-top: -15px" class="label"><b>Password </b></label><BR><BR>
+            <input value="{{account.Password}}" class="forgot-input" type="text" name="password" required><BR>
+
+            <label style="position: absolute; margin-top: -5px" class="label"><b>Permission </b></label><BR>
+            <input style="margin-left: 20px;" type="radio" name="permission" checked value="Administrator" required>Administrator
+            <input style="margin-left: 30px;" type="radio" name="permission" disabled value="Staff">Staff<BR>
+            <a href="/homepage"><div id="ignore"><img class="ignoreicon2" src="/images/uncheck.png"></div></a>
+            <button type="submit" id="check"><img class="checkicon2" src="/images/check.png"></button>
+        
+        </div>
+     </form>
+
+    </div>
+
+
+
+
+
+</body>
+</html>

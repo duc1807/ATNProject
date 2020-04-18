@@ -1,0 +1,195 @@
+body
+{
+  background-image: url("backgroundsignin.jpg");
+}
+
+#home
+{
+  position: absolute;
+  margin-top: -112.8px;
+  margin-left: -10px;
+  width: 45px;
+  z-index: 3;
+  display: block;
+  padding: 1.5px 28px;
+  border: 1px solid rgb(85, 85, 85);
+  background-color: rgb(48, 97, 202);
+}
+
+#trans
+{
+  margin-left: 100px;
+  transition: 0.4s;
+}
+
+#home:hover 
+{
+  background-color: rgb(36, 64, 143);
+  transition: 0.4s; 
+}
+
+.form-popup 
+{
+  display: none;
+  position: fixed;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container 
+{
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+ul 
+{
+  position: fixed;
+  z-index: 2;
+  list-style-type: none;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  margin-top: -115px;
+  width: 1450px;
+  margin-left: -10px;
+  border: 2px solid rgb(153, 153, 153);
+}
+
+#info
+{
+  color: white; 
+  font-size:12.9px; 
+  margin-top:17px; 
+  z-index:20; 
+  position:fixed; 
+  margin-left:1100px;
+}  
+
+#logout
+{
+  background-color: rgb(105, 50, 50);
+  margin-left: 750px;
+}
+  
+li 
+{
+  float: left;
+  border: 1px solid rgb(85, 85, 85);
+}
+  
+.active 
+{
+  background-color: #4CAF50;
+}
+
+li a 
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 25px;
+  text-decoration: none;
+}
+  
+/* Change the link color to #111 (black) on hover */
+li a:hover 
+{
+  background-color: #111;
+  transition: 0.4s;
+}
+
+/* Container */
+ #option
+{
+  position: fixed;
+  background-color: white;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  right: 0px;
+  margin-bottom: auto;
+}
+
+#container
+{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 265px;
+  margin-top: 110px;
+  height: 540px;
+  width: 900px;
+  border-radius: 20px;
+}
+
+#manage-account, #manage-product, #account
+{
+  border-radius: 10px;
+  transition: transform 0.2s;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background-color: #5e2121;
+  border: 3px solid black;
+}
+
+  #manage-account
+{
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+#manage-product
+{
+  margin-left: 530px;
+  margin-top: 50px; 
+}
+
+#account
+{
+  margin-top: 290px;
+  margin-left: 300px;
+}
+
+#manage-account:hover, #manage-product:hover, #account:hover
+{
+  transform: scale(1.1);
+  transition: transform 0.4s;
+  cursor: pointer;
+}
+
+#staffimg
+{
+  width: 140px;
+  height: 100px;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+#productimg
+{
+  margin-top:12px;
+  width: 110px;
+  height: 110px;
+  margin-left: 95px;
+}
+
+#accountimg
+{
+  width: 100px;
+  height: 100px;
+  margin-left: 95px;
+  margin-top: 25px;
+} 
+
+h1
+{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top:30px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
