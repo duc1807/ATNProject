@@ -5,8 +5,6 @@ const app = express();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-app.listen(process.env.PORT || 3000);   
-
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -34,9 +32,7 @@ app.use('/', indexController);
 app.use('/homepage', homepageController);
 app.use('/employeepage', employeeController);
 
-app.get('/', function(req,res)
-{
-    res.render('index');
-});
-
+app.listen(process.env.PORT || 3000, function() {
+    console.log('Server listening on port 3000');
+    });  
 
