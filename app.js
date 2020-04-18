@@ -33,3 +33,8 @@ var employeeController = require("./employee.js");
 app.use('/', indexController);
 app.use('/homepage', homepageController);
 app.use('/employeepage', employeeController);
+
+app.get('/', function(req,res)
+{
+    res.redirect('/');
+});
