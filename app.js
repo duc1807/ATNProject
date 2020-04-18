@@ -26,6 +26,11 @@ app.engine('hbs',engines.handlebars);
 app.set('views','./views');
 app.set('view engine','hbs');
 
+app.get('/', function(req,res)
+{
+    res.redirect('/');
+});
+
 var indexController = require("./index.js");
 var homepageController = require("./homepage.js");
 var employeeController = require("./employee.js");
@@ -34,7 +39,4 @@ app.use('/', indexController);
 app.use('/homepage', homepageController);
 app.use('/employeepage', employeeController);
 
-app.get('/', function(req,res)
-{
-    res.redirect('/');
-});
+
