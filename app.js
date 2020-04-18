@@ -28,7 +28,7 @@ app.set('view engine','hbs');
 
 app.get('/', function(req,res)
 {
-    res.redirect('/');
+    res.render('index');
 });
 
 var indexController = require("./index.js");
